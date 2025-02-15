@@ -15,19 +15,20 @@ local lualine_require = require("lualine_require")
 
 local function loadcolors()
     -- Rose-pine palette
-    local rosepine = require("rose-pine.palette")
-    local colors = {
-        bg = rosepine.base,
-        fg = rosepine.text,
-        yellow = rosepine.gold,
-        cyan = rosepine.foam,
-        black = rosepine.subtled,
-        green = rosepine.pine,
-        white = rosepine.text,
-        magenta = rosepine.iris,
-        blue = rosepine.rose,
-        red = rosepine.love
-    }
+    -- local rosepine = require("rose-pine.palette")
+    -- local colors = {
+    --     bg = rosepine.base,
+    --     fg = rosepine.text,
+    --     yellow = rosepine.gold,
+    --     cyan = rosepine.foam,
+    --     black = rosepine.subtled,
+    --     green = rosepine.pine,
+    --     white = rosepine.text,
+    --     magenta = rosepine.iris,
+    --     blue = rosepine.rose,
+    --     red = rosepine.love
+    -- }
+    local colors = {}
 
     -- Try to load pywal colors
     local modules = lualine_require.lazy_require {

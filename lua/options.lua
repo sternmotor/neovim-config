@@ -65,9 +65,9 @@ opt.cmdheight = 0      -- more space in the neovim command line for displaying m
 
 opt.mouse = "a"        -- allow the mouse to be used in neovim
 opt.number = true      -- set numbered lines
-opt.scrolloff = 18     -- minimal number of screen lines to keep above and below the cursor
+opt.scrolloff = 10     -- minimal number of screen lines to keep above and below the cursor
 opt.sidescrolloff = 3  -- minimal number of screen columns to keep to the left and right (horizontal) of the cursor if wrap is `false`
-opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
+opt.signcolumn = "no" -- always show the sign column, otherwise it would shift the text each time
 opt.splitbelow = true  -- open new split below
 opt.splitright = true  -- open new split to the right
 opt.wrap = true        -- display a wrapped line
@@ -122,5 +122,4 @@ for _, plugin in pairs(disabled_built_ins) do
 end
 
 -- Colorscheme
--- By default, use rose-pine
-cmd.colorscheme("rose-pine")
+cmd.colorscheme("catppuccin-mocha")
