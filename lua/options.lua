@@ -53,11 +53,12 @@ opt.lazyredraw = true -- don"t update the display while executing macros
 opt.list = true
 -- You can also add "space" or "eol", but I feel it"s quite annoying
 opt.listchars = {
-    tab = "┊ ",
+    -- tab = "┊ ",
     trail = "·",
-    extends = "»",
-    precedes = "«",
-    nbsp = "×"
+    tab = "» ",
+    -- extends = "»",
+    -- precedes = "«",
+    -- nbsp = "×"
 }
 
 -- Hide cmd line
