@@ -163,7 +163,7 @@ local config = {
                 symbols = {
                     modified = ' ●', -- Text to show when the buffer is modified
                     alternate_file = '', -- Text to show to identify the alternate file
-                    directory = '', -- Text to show when the buffer is a directory
+                    directory = 'd', -- Text to show when the buffer is a directory
                 },
             },
         },
@@ -226,34 +226,37 @@ ins_left {
 
 ins_left {
     "branch",
-    icon = " ",
+    icon = "br:",
     color = {
         fg = colors.blue,
-        gui = "bold"
+        gui = ""
     }
 }
 
-ins_left {
-    "diff",
-    -- Is it me or the symbol for modified us really weird
-    symbols = {
-        added = " ",
-        modified = " ",
-        removed = " "
-    },
-    diff_color = {
-        added = {
-            fg = colors.green
-        },
-        modified = {
-            fg = colors.yellow
-        },
-        removed = {
-            fg = colors.red
-        }
-    },
-    cond = conditions.hide_in_width
-}
+-- ins_left {
+--     "diff",
+--     -- Is it me or the symbol for modified us really weird
+--     symbols = {
+--         -- added = " ",
+--         -- modified = " ",
+--         -- removed = " "
+--         added = "add",
+--         modified = '●',
+--         removed = "r"
+--     },
+--     diff_color = {
+--         added = {
+--             fg = colors.green
+--         },
+--         modified = {
+--             fg = colors.yellow
+--         },
+--         removed = {
+--             fg = colors.red
+--         }
+--     },
+--     cond = conditions.hide_in_width
+-- }
 
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it"s any number greater then 2

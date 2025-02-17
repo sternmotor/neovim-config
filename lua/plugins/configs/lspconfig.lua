@@ -96,6 +96,29 @@ for server, server_opts in pairs(servers) do
     end
 end
 
+
+local lsp_config = require 'lspconfig'
+lsp_config.lua_ls.setup {
+  settings = {
+    Lua = {
+      hint = {
+        enable = true,
+      },
+      runtime = {
+        version = 'LuaJIT',
+      },
+      workspace = {
+        checkThirdParty = true,
+        library = {
+          vim.env.VIMRUNTIME,
+          '~/.local/share/nvim/lazy/solarized.nvim',
+        },
+      },
+    },
+  },
+}
+
+
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = ensure_installed,

@@ -77,14 +77,33 @@ local builtin_plugins = {
     {
         "nvim-lualine/lualine.nvim",
         opts = function()
-            require("plugins.configs.lualine")
+            require("plugins.configs.lualine-slanted")
+            -- require("plugins.configs.lualine")
         end
     },
     -- colorscheme
+-- vim.g.solarized_italic_comments = true
+-- vim.g.solarized_italic_keywords = true
+-- vim.g.solarized_italic_functions = true
+-- vim.g.solarized_italic_variables = false
+-- vim.g.solarized_contrast = true
+-- vim.g.solarized_borders = false
+-- vim.g.solarized_disable_background = false
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
+        'maxmx03/solarized.nvim',
+        lazy = false,
         priority = 1000,
+        opts = {
+          palette = 'selenized', -- solarized (default) | selenized
+          variant = 'autumn', -- "spring" | "summer" | "autumn" | "winter" (default)
+        },
+        ---@type solarized.config
+        config = function(_, opts)
+            vim.o.termguicolors = true
+            vim.o.background = 'light'
+            require('solarized').setup(opts)
+            vim.cmd.colorscheme 'solarized'
+        end,
     },
     -- LSP stuffs
     -- Portable package manager for Neovim that runs everywhere Neovim runs.
@@ -194,7 +213,7 @@ require("lazy").setup({
         -- install missing plugins on startup
         missing = true,
         -- try to load one of these colorschemes when starting an installation during startup
-        colorscheme = { "rose-pine", "habamax" }
+        colorscheme = { "solarized" }
     },
     checker = {
         -- automatically check for plugin updates

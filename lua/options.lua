@@ -123,4 +123,4 @@ for _, plugin in pairs(disabled_built_ins) do
 end
 
 -- Colorscheme
-cmd.colorscheme("catppuccin-mocha")
+--cmd.colorscheme("catppuccin-mocha")
