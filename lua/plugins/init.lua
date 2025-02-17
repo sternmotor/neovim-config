@@ -77,6 +77,7 @@ local builtin_plugins = {
     {
         "nvim-lualine/lualine.nvim",
         opts = function()
+            -- require("plugins.configs.lualine-maxmx03")
             require("plugins.configs.lualine-slanted")
             -- require("plugins.configs.lualine")
         end
@@ -93,10 +94,7 @@ local builtin_plugins = {
         'maxmx03/solarized.nvim',
         lazy = false,
         priority = 1000,
-        opts = {
-          palette = 'selenized', -- solarized (default) | selenized
-          variant = 'autumn', -- "spring" | "summer" | "autumn" | "winter" (default)
-        },
+        opts = {},
         ---@type solarized.config
         config = function(_, opts)
             vim.o.termguicolors = true
@@ -105,6 +103,25 @@ local builtin_plugins = {
             vim.cmd.colorscheme 'solarized'
         end,
     },
+    -- bufferline like https://github.com/maxmx03/solarized.nvim/blob/main/README.md
+    {
+      'akinsho/bufferline.nvim',
+      version = '*',
+      dependencies = 'nvim-tree/nvim-web-devicons',
+      config = function()
+        require('bufferline').setup {
+          options = {
+            mode = 'buffers',
+            separator_style = 'slant',
+            always_show_bufferline = true,
+            show_buffer_close_icons = false,
+            show_close_icon = false,
+            color_icons = true,
+          },
+        }
+      end,
+    },
+
     -- LSP stuffs
     -- Portable package manager for Neovim that runs everywhere Neovim runs.
     -- Easily install and manage LSP servers, DAP servers, linters, and formatters.
